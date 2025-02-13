@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #ffe6e6;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        #yes-btn, #no-btn {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes-btn {
+            background-color: #ff3366;
+            color: white;
+            font-size: 24px;
+        }
+        #no-btn {
+            background-color: #cccccc;
+            color: black;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yes-btn" onclick="alert('Yay! ❤️ Happy Valentine’s!')">Yes</button>
+    <button id="no-btn" onclick="makeYesBigger()">No</button>
+
+    <script>
+        function makeYesBigger() {
+            let yesBtn = document.getElementById("yes-btn");
+            let noBtn = document.getElementById("no-btn");
+            
+            // Increase "Yes" button size
+            let currentSize = parseInt(window.getComputedStyle(yesBtn).fontSize);
+            yesBtn.style.fontSize = (currentSize + 10) + "px";
+
+            // Decrease "No" button size
+            let currentNoSize = parseInt(window.getComputedStyle(noBtn).fontSize);
+            noBtn.style.fontSize = (currentNoSize - 5) + "px";
+
+            // If "No" gets too small, remove it
+            if (currentNoSize <= 10) {
+                noBtn.remove();
+            }
+        }
+    </script>
+</body>
+</html>
